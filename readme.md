@@ -1,5 +1,6 @@
 
-### Approximate time usage
+### Approximate time usage (8,5 hours)
+
 1. Understand datatypes (30 min)
 2. Import files and calendars into java objects (60 min)
 http://www.jsonschema2pojo.org/
@@ -28,17 +29,26 @@ Will return each interval again with available timeslots within that interval.
 
 **Map<String, HashMap<Interval, List<Timeslot>>> findAvailableTime(String[] calendarIds, int durationInSeconds, Interval intervalToSearch)**
 
-Main function to solve the assignment. First gets all Calendars relevant to CalendarId-s from parameter. 
-Then 
+Main function to solve the assignment. 
+1. Gets Calendars relevant to CalendarId-s from parameter. 
+2. Then iterates through each calendar's appointments to find appointments that collide with the requested interval
+3. No collitions? Continue
+4. Check gaps before the first appointment, after the last appointment and between the rest of the appointments to see 
+if there is a room for an appointment with the requested duration
+5. Compile a new list of intervals from the gaps found where a potential meeting can fit.
+6. Utilize helper function findTimeslotsWithinIntervals to get all the timeslots available within the intervals which are not booked
+7. Return
 
-### Thoughts
+
+
+### Initial thoughts
 
 1. Would've like to have more tests underway but got hung up in the functionality.
-2. Got stuck on timeslots trying to figure out how to connect one timeslots end to another timeslots start and create links of timeslots, 
+2. Got stuck on timeslots trying to figure out how to connect one timeslot.end to another timeslot.start and create chains/links of timeslots, 
 spent too long on this before I realized I could easily read the timeslots in their order as they are already chronological.
-3. Not returning a finnished functionality rather data that can be turned into functionality.
-4. Learned a lot about working with Time
-
+3. Not returning a finished functionality rather data that can be read into functionality.
+4. Had som issues with Intellij resetting to wrong Java version when I used Java 11 functionality . 
+Should be good now
 
 
 
