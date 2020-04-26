@@ -25,12 +25,10 @@ public class MainTest {
         Map<String, HashMap<Interval, List<Timeslot>>> results = main.findAvailableTime(calendarIds, durationInSeconds, intervalToSearch);
 
         results.forEach((calendarId, calendar) -> {
-            System.out.println("Available Intervals for: " + calendarId);
+            System.out.println("Available Intervals for Calendar: " + calendarId);
             calendar.forEach((interval, timeslots) -> {
-                System.out.println("From: " + interval.getStart() + "To: " + interval.getEnd());
-                timeslots.forEach(timeslot -> {
-                    System.out.println("Timeslot available from: " + timeslot.getStart() + " To: " + timeslot.getEnd());
-                });
+                System.out.println("Calendar available from: " + interval.getStart() + " to: " + interval.getEnd());
+                timeslots.forEach(timeslot -> System.out.println("Timeslot available from: " + timeslot.getStart() + " To: " + timeslot.getEnd() + " | Timeslot id: " + timeslot.getId()));
             });
             System.out.println("---------------- \n");
         });

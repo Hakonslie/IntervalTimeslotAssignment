@@ -1,4 +1,10 @@
 
+### How to run
+
+Run the function runWithParameters() in MainTest and it will print the available Intervals for each Calendar, 
+it will also print the available timeslots for those intervals
+
+
 ### Java 11 issues
 I had to manually set the version of the project to Java 11 several times in Intellij in order to utilize the java.nio.file.* packages 
 and it kept resetting. If any of those packages gives error I fixed it by manually changing the compiler here:
