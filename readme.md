@@ -1,4 +1,10 @@
 
+### Java 11 issues
+I had to manually set the version of the project to Java 11 several times in Intellij in order to utilize the java.nio.file.* packages 
+and it kept resetting. If any of those packages gives error I fixed it by manually changing the compiler here:
+![alt text](Bytecode.png)
+                                                                            
+
 ### Approximate time usage (8,5 hours)
 
 1. Understand datatypes (30 min)
@@ -8,11 +14,11 @@ http://www.jsonschema2pojo.org/
 https://www.threeten.org/threeten-extra/
 4. Method for Iterating Calendars Timeslots (120 min)
 https://stackoverflow.com/questions/8405087/what-is-this-date-format-2011-08-12t201746-384z
-5. Colleting Timeslots ( 180 min)
+5. Colleting Timeslots (180 min)
 Spent a long time struggling with iterating over available timeslots, 
 but took a step back and decided to make it easier by reading the array in the order they are when I understood they are already chronological
 6. Return available Intervals with Timeslots. (60 min)
-7. Some clean up and documentation ( 30 min)
+7. Some clean up and documentation (30 min)
 
 ### Function explanations
 **fetchCalendars()**
@@ -47,8 +53,8 @@ if there is a room for an appointment with the requested duration
 2. Got stuck on timeslots trying to figure out how to connect one timeslot.end to another timeslot.start and create chains/links of timeslots, 
 spent too long on this before I realized I could easily read the timeslots in their order as they are already chronological.
 3. Not returning a finished functionality rather data that can be read into functionality.
-4. Had som issues with Intellij resetting to wrong Java version when I used Java 11 functionality . 
-Should be good now
+4. Had som issues with Intellij resetting to wrong Java version when I used Java 11 functionality. 
+Should be good now, otherwise solution is in disclaimer. Not sure why this is happening, sorry about that if it creates an issue!
 
 
 
